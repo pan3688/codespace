@@ -677,3 +677,54 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2014-07-26 19:29:34.354
 !MESSAGE The project description file (.project) for 'GitTestTwo' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-07-26 19:35:46.896
+!MESSAGE Project funsets has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-07-26 19:35:46.903
+!MESSAGE Project funsets runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-07-26 19:35:46.916
+!MESSAGE Project funsets has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-07-26 19:35:46.917
+!MESSAGE Project funsets runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-07-26 19:36:45.624
+!MESSAGE Project recfun has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-07-26 19:36:45.624
+!MESSAGE Project recfun runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-07-26 19:36:45.625
+!MESSAGE Project recfun has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-07-26 19:36:45.625
+!MESSAGE Project recfun runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-07-26 19:36:45.863
+!MESSAGE Turning on project-specific settings for recfun because of requested Scala Installation change
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-07-26 19:37:35.790
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-07-26 19:37:35.790
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-07-26 19:37:35.790
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-07-26 19:37:35.791
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-07-26 19:37:36.179
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-07-26 19:37:36.180
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-07-26 19:37:36.180
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-07-26 19:37:36.180
+!MESSAGE Project scala2.0 runs on platform default installation.
