@@ -4,8 +4,7 @@ import java.io.InputStreamReader;
 
 public class Solution {
 	//static int acc = 0;
-	static int a = 0,j=0;
-	
+	static int a = 0;
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
@@ -18,15 +17,13 @@ public class Solution {
 			inputNumbers[i] = Integer.parseInt(input.charAt(i)+"");
 			
 		}
-		substrings(inputNumbers,0,inputNumbers.length-1);
-		System.out.println(a);
+		System.out.println(substrings(inputNumbers,0,inputNumbers.length-1));
 	//	System.out.println("number is " + arrayNum(inputNumbers,0,inputNumbers.length-1));
 	}
 	
 	public static int substrings(int[] inputNumbers,int i,int length){
-		System.out.println("a\t" + a);
+		
 		a += arrayNum(inputNumbers,i,length);
-		j+= 1;
 		
 		if(i==length || length==0)
 			return 0;

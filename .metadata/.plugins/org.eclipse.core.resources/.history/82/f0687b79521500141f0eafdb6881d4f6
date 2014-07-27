@@ -28,7 +28,7 @@ public class Solution {
 		a += arrayNum(inputNumbers,i,length);
 		j+= 1;
 		
-		if(i==length || length==0)
+		if(j==inputNumbers.length-1 || i==length || length==0)
 			return 0;
 		
 		return substrings(inputNumbers,i++,length) + substrings(inputNumbers, i, length-1);
