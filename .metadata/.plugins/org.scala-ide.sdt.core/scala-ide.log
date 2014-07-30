@@ -21,3 +21,33 @@
 2014-07-27 01:29:31,869  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Project scala2.0 runs on platform default installation.
 2014-07-27 01:29:32,039  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
 2014-07-27 01:29:32,040  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+2014-07-28 15:46:06,500  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Project scala2.0 has platform default sourceLevel.
+2014-07-28 15:46:06,509  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Project scala2.0 runs on platform default installation.
+2014-07-28 15:46:06,542  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Project scala2.0 has platform default sourceLevel.
+2014-07-28 15:46:06,542  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Project scala2.0 runs on platform default installation.
+2014-07-28 15:46:06,559  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+2014-07-28 15:46:06,560  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+2014-07-29 15:27:29,621  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Project scala2.0 has platform default sourceLevel.
+2014-07-29 15:27:29,647  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Project scala2.0 runs on platform default installation.
+2014-07-29 15:27:29,663  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Project scala2.0 has platform default sourceLevel.
+2014-07-29 15:27:29,664  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Project scala2.0 runs on platform default installation.
+2014-07-29 15:27:29,664  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+2014-07-29 15:27:29,665  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+2014-07-29 20:05:42,895  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Project scala2.0 has platform default sourceLevel.
+2014-07-29 20:05:42,897  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Project scala2.0 runs on platform default installation.
+2014-07-29 20:05:42,897  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Project scala2.0 has platform default sourceLevel.
+2014-07-29 20:05:42,897  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Project scala2.0 runs on platform default installation.
+2014-07-29 20:05:42,898  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+2014-07-29 20:05:42,898  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+2014-07-30 12:44:59,570  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Project scala2.0 has platform default sourceLevel.
+2014-07-30 12:44:59,634  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Project scala2.0 runs on platform default installation.
+2014-07-30 12:44:59,701  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Project scala2.0 has platform default sourceLevel.
+2014-07-30 12:44:59,702  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Project scala2.0 runs on platform default installation.
+2014-07-30 12:44:59,702  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+2014-07-30 12:44:59,703  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+2014-07-30 14:07:56,262  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Project scala2.0 has platform default sourceLevel.
+2014-07-30 14:07:56,266  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Project scala2.0 runs on platform default installation.
+2014-07-30 14:07:56,266  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Project scala2.0 has platform default sourceLevel.
+2014-07-30 14:07:56,267  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Project scala2.0 runs on platform default installation.
+2014-07-30 14:07:56,288  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+2014-07-30 14:07:56,288  WARN [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Preference scala.compiler.installation was uninitialized, setting default to 2.11.

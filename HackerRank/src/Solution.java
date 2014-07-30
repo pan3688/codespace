@@ -1,10 +1,7 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-
 public class Solution {
-	//static int acc = 0;
-	static int a = 0,j=0;
 	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -18,31 +15,36 @@ public class Solution {
 			inputNumbers[i] = Integer.parseInt(input.charAt(i)+"");
 			
 		}
-		substrings(inputNumbers,0,inputNumbers.length-1);
-		System.out.println(a);
+		long sum = substrings(inputNumbers);
+		System.out.println((long)(sum % (Math.pow(10, 9) + 7)));;
 	//	System.out.println("number is " + arrayNum(inputNumbers,0,inputNumbers.length-1));
 	}
 	
-	public static int substrings(int[] inputNumbers,int i,int length){
-		System.out.println("a\t" + a);
-		a += arrayNum(inputNumbers,i,length);
-		j+= 1;
+	public static long substrings(int[] inputNumbers){
 		
-		if(i==length || length==0)
+		/*if(i==length || length==0)
 			return 0;
 		
-		return substrings(inputNumbers,i++,length) + substrings(inputNumbers, i, length-1);
+		return substrings(inputNumbers,i++,length) + substrings(inputNumbers, i, length-1);*/
+		long sum = 0;
+		for(int i=0;i<inputNumbers.length;i++){
+			for(int j=1;j+i <= inputNumbers.length; j++){
+				sum += arrayNum(inputNumbers, i, j);
+				sum = (long)(sum % (Math.pow(10, 9) + 7));
+			}
+		}
+		return sum;
 	}
 	
-	public static int arrayNum(int[] inputNumbers,int start,int length){
+	public static long arrayNum(int[] inputNumbers,int start,int length){
 		
-		int acc = 0;
-		for(int i=start; i < inputNumbers.length; i++){
+		long acc = 0;
+		for(int i=0; i < length; i++){
 			
-			acc = acc*10 + inputNumbers[i]; 
+			acc = acc*10 + inputNumbers[i + start]; 
 			
 		}
-		
+	//	System.out.println(acc);
 		return acc;
 	}
 }
