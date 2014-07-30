@@ -15,25 +15,32 @@ public class Solution {
 			inputNumbers[i] = Integer.parseInt(input.charAt(i)+"");
 			
 		}
-		long sum = substringNew(inputNumbers);
-		System.out.println((long)(sum % (Math.pow(10, 9) + 7)));;
+		long time1 = System.currentTimeMillis();
+		long sum = subNew(inputNumbers);
+		long time2 = System.currentTimeMillis();
+		
+		System.out.println(sum);
+//		System.out.println((time2-time1)/1000);
 	}
 	
-	public static long substringNew(int[] inputNumbers){
-		
+	public static long subNew(int[] inputNum){
 		long sum = 0;
-		int length = inputNumbers.length;
+		int length = inputNum.length;
+
+		long[] array1 = new long[length];
+		array1[0] = 1;
+		for(int i=1;i<length; i++){
+			
+			array1[i] = (array1[i-1] * 10 +1) % 1000000007; 
+		//	System.out.println(array1[i]);
+		}
 		
 		for(int i=0;i<length;i++){
-			for(int j=length-i; j>0;j--){
-				if(inputNumbers[i]!=0)
-					sum =(long)(sum + inputNumbers[i]*Math.pow(10, j-1)*(i+1));
-				
-				sum = (long)(sum % (Math.pow(10, 9) + 7));
-			}
+		//	sum = sum.multiply(a);
+			sum += inputNum[i] * array1[length-i-1] * (i+1);
+			sum= sum % 1000000007;
 		}
 		return sum;
+		
 	}
-	
-	
 }
