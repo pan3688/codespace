@@ -1,46 +1,84 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+
 
 public class Solution {
+	
+	public static ArrayList<Long> scores = null;
 	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		String input = br.readLine();
-
-		int[] inputNumbers = new int[input.length()];
+		int t = Integer.parseInt(br.readLine());
 		
-		for(int i=0;i<input.length();i++){
+		for(int i=0; i<t;i++){
+			int n = Integer.parseInt(br.readLine());
 			
-			inputNumbers[i] = Integer.parseInt(input.charAt(i)+"");
+			String line = br.readLine();
+			scores = new ArrayList<Long>();
 			
+			String []brickstrings = line.split(" ");
+			long[] bricks = new long[brickstrings.length];
+			
+			for(int j=0;j<brickstrings.length;j++){
+				bricks[j] = Long.parseLong(brickstrings[j]);
+			}
+			playGame(bricks,0,0,true);
+			
+			//System.out.println(Collections.max(scores));
+			for(long score : scores)
+				System.out.println(score);
 		}
-		long time1 = System.currentTimeMillis();
-		long sum = subNew(inputNumbers);
-		long time2 = System.currentTimeMillis();
-		
-		System.out.println(sum);
-//		System.out.println((time2-time1)/1000);
 	}
 	
-	public static long subNew(int[] inputNum){
-		long sum = 0;
-		int length = inputNum.length;
+	public static void playGame(long[] bricks,long score,int offset,boolean countOrNot){
+		
+		long score1 = 0;
+		if(offset < bricks.length)
+			score1 = bricks[offset];
+		/*else
+			return;*/
+		
+		long score2 = 0;
+		if(offset+1 < bricks.length)
+			score2 = bricks[offset] + bricks[offset + 1];
+		else if(offset + 1 == bricks.length)
+			score2 = bricks[offset];
+		/*else
+			return;*/
+		
+		long score3=0;
+		
+		if(offset+2 < bricks.length)
+			score3 = bricks[offset] + bricks[offset + 1] + bricks[offset + 2];
+		else if(offset + 2 == bricks.length)
+			score3 = bricks[offset] + bricks[offset + 1];
+		else if(offset + 1 == bricks.length)
+			score3 = bricks[offset];
+		/*else
+			return;*/
+				
+		if(countOrNot){
+			score1 += score;
+			score2 += score;
+			score3 += score;
+		}
+		
+		if(offset >= bricks.length && countOrNot){
+			scores.add(score);
+			return;
+		}
 
-		long[] array1 = new long[length];
-		array1[0] = 1;
-		for(int i=1;i<length; i++){
-			
-			array1[i] = (array1[i-1] * 10 +1) % 1000000007; 
-		//	System.out.println(array1[i]);
+		if(countOrNot){
+			playGame(bricks, score1, offset + 1, false);
+			playGame(bricks, score2, offset + 2, false);
+			playGame(bricks, score3, offset + 3, false);
+		}else{
+			playGame(bricks, score1, offset + 1, true);
+			playGame(bricks, score2, offset + 2, true);
+			playGame(bricks, score3, offset + 3, true);
 		}
-		
-		for(int i=0;i<length;i++){
-		//	sum = sum.multiply(a);
-			sum += inputNum[i] * array1[length-i-1] * (i+1);
-			sum= sum % 1000000007;
-		}
-		return sum;
-		
 	}
 }
