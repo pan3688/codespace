@@ -1,0 +1,8 @@
+LOAD
+ADD John Doe 1/5/2001
+ADD Mike Blank 1/6/2002
+ADD Dan Russ 1/7/2003
+SHOW 3
+SHOW 4
+UPDATE Dan Russ 1/8/2003 John Doe
+STORE
