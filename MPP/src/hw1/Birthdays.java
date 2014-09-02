@@ -4,6 +4,7 @@ import hw1.Database.BirthdayDatabase;
 import hw1.Exceptions.DuplicateEntryException;
 import hw1.Exceptions.InvalidDateFormatException;
 import hw1.Exceptions.InvalidRangeException;
+import hw1.Exceptions.UnknownCommandException;
 import hw1.Exceptions.WrongArgumentCountException;
 import hw1.Model.BirthdayDataModel;
 
@@ -50,18 +51,18 @@ public class Birthdays {
 					else if(command.startsWith("SEARCH"))
 						search(command);
 					else
-						throw new Exception(command);
+						throw new UnknownCommandException(command);
 				} catch (WrongArgumentCountException e) {
 					bw.write(e.getCommand() + ": ERROR WRONG_ARGUMENT_COUNT" + "\n");
-				} catch (Exception e) {
-					bw.write(command + ": ERROR UNKNOWN_COMMAND\n");
+				} catch (UnknownCommandException e) {
+					bw.write(e.getCommand() + ": ERROR UNKNOWN_COMMAND\n");
 				}
 				
 				command = br.readLine();
 			}
 		}catch (IOException e) {
 			
-		} finally{
+		}finally{
 			
 			try {
 				br.close();
@@ -73,9 +74,11 @@ public class Birthdays {
 	
 	public static void load(String command) throws WrongArgumentCountException{
 		
-		String[] input = command.split(" ");
+		String[] input = command.trim().split(" ");
+		
 		String csvLine = "";
 		String[] csvParts = null;
+		
 		BirthdayDataModel model = null;
 		int count = 0;
 		BufferedReader brDatabaseLoad = null;
@@ -136,7 +139,7 @@ public class Birthdays {
 
 	public static void store(String command) throws WrongArgumentCountException{
 		
-		String[] input = command.split(" ");
+		String[] input = command.trim().split(" ");
 		
 		if(input.length != 2)
 			throw new WrongArgumentCountException(command);
@@ -216,7 +219,7 @@ public class Birthdays {
 	
 	public static void show(String command) throws WrongArgumentCountException{
 		
-		String[] input = command.split(" ");
+		String[] input = command.trim().split(" ");
 		
 		if(input.length != 2)
 			throw new WrongArgumentCountException(command);
@@ -249,6 +252,9 @@ public class Birthdays {
 		
 	}
 	
+	/*
+	 * TO DO -- no record found logic is missing
+	 */
 	public static void update(String command) throws WrongArgumentCountException{
 		
 		boolean done = false;
@@ -256,7 +262,7 @@ public class Birthdays {
 		try {
 			done = BirthdayDatabase.update(command);
 			
-			String[] input = command.split(" ");
+			String[] input = command.trim().split(" ");
 			
 			if(done && input.length == 4)
 				bw.write("UPDATE: OK " + input[1].trim() + " " + input[2].trim() + "\n");
@@ -282,7 +288,27 @@ public class Birthdays {
 		}
 	}
 	
-	public static void search(String command){}
+	public static void search(String command) throws WrongArgumentCountException{
+		
+		String[] input = command.trim().split(" ");
+		
+		if(input.length != 2)
+			throw new WrongArgumentCountException(command);
+		
+		List<BirthdayDataModel> list = BirthdayDatabase.searhNeedle(input[1].trim());
+		
+		try {
+			bw.write("SEARCH: OK " + list.size() + "\n");
+			
+			for(BirthdayDataModel model : list){
+				bw.write(model.toString() + "\n");
+			}
+		} catch (IOException e) {
+			try {
+				bw.write("SEARCH: ERROR IOException\n");
+			} catch (IOException e1) {}
+		}
+	}
 	
 	
 }

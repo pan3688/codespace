@@ -1,9 +1,12 @@
-LOAD csvinput.csv
-ADD John Doe 9/5/2001
+LOAD csvinput.csv  
+ADD John Doe 9/5/2001   
 ADD Mike Blank 9/2/2002
 ADD Dan Russ 1/7/2003
-SHOW 3
-UPDATE Mike Blank 9/4/2003
+ADD Luke Mika 4/6/2002
+SHOW 3  
+CLEAR
+UPDATE Mike Blank 9/4/2003   
 UPDATE John Doe 8/5/2012 John Doe
 SHOW 4
+SEARCH MIK
 STORE db.csv

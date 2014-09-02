@@ -67,7 +67,10 @@ public class BirthdayDatabase {
 	public static boolean update(String command) 
 			throws WrongArgumentCountException, ParseException, InvalidDateFormatException, DuplicateEntryException{
 		
-		String[] input = command.split(" ");
+		String[] input = command.trim().split(" ");
+		
+		if(input.length != 4 && input.length != 6)
+			throw new WrongArgumentCountException(command);
 		
 		if(BirthdayDataModel.isDateValid(input[3].trim())){
 			
@@ -102,14 +105,14 @@ public class BirthdayDatabase {
 					}
 				}else
 					throw new DuplicateEntryException();
-			}else
-				throw new WrongArgumentCountException(input[0].trim());
+			}
 		}
 		
 		return true;
 	}
 	
-	public static List<BirthdayDataModel> query(String range,BufferedWriter bw) throws InvalidRangeException,NumberFormatException, IOException{
+	public static List<BirthdayDataModel> query(String range,BufferedWriter bw) 
+			throws InvalidRangeException,NumberFormatException, IOException{
 		
 		int intRange = Integer.parseInt(range);
 		ArrayList<BirthdayDataModel> match = new ArrayList<BirthdayDataModel>();
@@ -173,6 +176,21 @@ public class BirthdayDatabase {
 	
 	public static int dbSize(){
 		return inMemoryDb.size();
+	}
+	
+	public static List<BirthdayDataModel> searhNeedle(String needle){
+		
+		List<BirthdayDataModel> match = new ArrayList<BirthdayDataModel>();
+		
+		for(BirthdayDataModel model : inMemoryDb){
+			
+			if(model.getFirstName().toLowerCase().contains(needle.toLowerCase()) 
+					|| model.getLastName().toLowerCase().contains(needle.toLowerCase()))
+				match.add(model);
+			
+		}
+		
+		return match;
 	}
 	
 }
