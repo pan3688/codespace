@@ -1,6 +1,9 @@
 package hw1;
 
+import hw1.Database.BirthdayDatabase;
+import hw1.Exceptions.DuplicateEntryException;
 import hw1.Exceptions.InvalidDateFormatException;
+import hw1.Exceptions.InvalidRangeException;
 import hw1.Exceptions.WrongArgumentCountException;
 import hw1.Model.BirthdayDataModel;
 
@@ -12,14 +15,13 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.ArrayList;
+import java.util.List;
 
 public class Birthdays {
 		
 	private static BufferedReader br = null;
 	private static BufferedWriter bw = null;
 	private static String command = "";
-	private static ArrayList<BirthdayDataModel> inMemoryDb = null;
 	
 	public static void main(String[] args) {
 		
@@ -27,7 +29,6 @@ public class Birthdays {
 			
 			br = new BufferedReader(new FileReader(new File("in.txt")));
 			bw = new BufferedWriter(new FileWriter(new File("out.txt")));
-			inMemoryDb = new ArrayList<BirthdayDataModel>();
 			
 			command = br.readLine();
 			
@@ -48,10 +49,12 @@ public class Birthdays {
 						update(command);
 					else if(command.startsWith("SEARCH"))
 						search(command);
+					else
+						throw new Exception(command);
 				} catch (WrongArgumentCountException e) {
-					try {
-						bw.write(e.getCommand() + ": ERROR " + "WRONG_ARGUMENT_COUNT" + "\n");
-					} catch (IOException e1) {}
+					bw.write(e.getCommand() + ": ERROR WRONG_ARGUMENT_COUNT" + "\n");
+				} catch (Exception e) {
+					bw.write(command + ": ERROR UNKNOWN_COMMAND\n");
 				}
 				
 				command = br.readLine();
@@ -64,13 +67,8 @@ public class Birthdays {
 				br.close();
 				bw.flush();
 				bw.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
+			} catch (IOException e) {}
 		}
-		
 	}
 	
 	public static void load(String command) throws WrongArgumentCountException{
@@ -95,9 +93,8 @@ public class Birthdays {
 				csvParts = csvLine.split(",");
 				
 				model = new BirthdayDataModel(csvParts[0].trim(), csvParts[1].trim(), csvParts[2].trim());
-				System.out.println(model);
 				
-				inMemoryDb.add(model);
+				BirthdayDatabase.add(model);
 				
 				count++;
 				
@@ -122,6 +119,10 @@ public class Birthdays {
 			try {
 				bw.write("LOAD: ERROR INVALID_DATE_FORMAT " + e.getCausedBy()+ "\n");
 			}catch(IOException e1){}
+		} catch (DuplicateEntryException e) {
+			try {
+				bw.write("LOAD: ERROR DUPLICATE_ENTRY " + "\n");
+			}catch(IOException e1){}
 		}finally{
 			
 			try {
@@ -136,42 +137,36 @@ public class Birthdays {
 	public static void store(String command) throws WrongArgumentCountException{
 		
 		String[] input = command.split(" ");
-		BufferedWriter storeDB = null;
 		
 		if(input.length != 2)
 			throw new WrongArgumentCountException(command);
 		
-		try {
-			storeDB = new BufferedWriter(new FileWriter(new File(input[1].trim())));
+		boolean done = false;
 		
-			for(BirthdayDataModel bdays : inMemoryDb){
-				
-				storeDB.write(bdays.toString() + "\n");
-				
-			}
-			storeDB.write("STORE: OK " + inMemoryDb.size() + "\n");
+		try {
+			done = BirthdayDatabase.store(input[1]);
+			
+			if(done)
+				bw.write("STORE: OK " + BirthdayDatabase.dbSize() + "\n");
+			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			try {
-				bw.write("STORE: ERROR ");
-			} catch (IOException e1){}
-		}finally{
-			
-			try {
-				storeDB.flush();
-				storeDB.close();
-			} catch (IOException e) {}
-			
+				bw.write("STORE: ERROR IOException " + "\n");
+			}catch(IOException e1){}		
 		}
 		
 	}
 	
 	public static void clear(String command){
 		
+		boolean done = false;
+		
 		try {
-			inMemoryDb = new ArrayList<BirthdayDataModel>();
+			done = BirthdayDatabase.clear();
 			
-			bw.write("CLEAR: OK " + "\n");
+			if(done)
+				bw.write("CLEAR: OK " + "\n");
+			
 		} catch (IOException e) {
 			try {
 				bw.write("CLEAR: ERROR " + "\n");
@@ -180,11 +175,112 @@ public class Birthdays {
 		
 	}
 	
-	public static void add(String command){}
+	public static void add(String command) throws WrongArgumentCountException{
+		
+		String[] input = command.split(" ");
+		
+		if(input.length != 4)
+			throw new WrongArgumentCountException(command);
+		
+		boolean done = false;
+		
+		try {
+			BirthdayDataModel model = new BirthdayDataModel(input[3].trim(),input[2].trim(),input[1].trim());
+			
+			done = BirthdayDatabase.add(model);
+			
+			if(done)
+				bw.write("ADD: OK " + model.getFirstName() + " " + model.getLastName() + "\n");
+			
+		} catch (InvalidDateFormatException e) {
+			try {
+				bw.write("ADD: ERROR INVALID_DATE_FORMAT\n");
+			} catch (IOException e1) {}
+		} catch (ParseException e) {
+			try {
+				bw.write("ADD: ERROR INVALID_DATE\n");
+			} catch (IOException e1) {}
+		} catch (DuplicateEntryException e) {
+			try {
+				bw.write("ADD: ERROR DUPLICATE_ENTRY \n");
+			} catch (IOException e1) {}
+		} catch (IOException e) {
+			try {
+				bw.write("ADD: ERROR IOException \n");
+			} catch (IOException e1) {}
+		}
+		
+		
+		
+	}
 	
-	public static void show(String command){}
+	public static void show(String command) throws WrongArgumentCountException{
+		
+		String[] input = command.split(" ");
+		
+		if(input.length != 2)
+			throw new WrongArgumentCountException(command);
+		
+		List<BirthdayDataModel> records = null;
+		
+		try {
+			records = BirthdayDatabase.query(input[1], bw);
+			
+			bw.write("SHOW: OK " + records.size() + "\n");
+			
+			for(BirthdayDataModel model : records){
+				bw.write(model.toString() + "\n");
+			}
+			
+		} catch (NumberFormatException e) {
+			try {
+				bw.write("SHOW: ERROR NOT_INT\n");
+			} catch (IOException e1) {}
+		} catch (InvalidRangeException e) {
+			try {
+				bw.write("SHOW: ERROR INVALID_INT\n");
+			} catch (IOException e1) {}
+		} catch (IOException e) {
+			try {
+				bw.write("SHOW: ERROR IOException\n");
+			} catch (IOException e1) {}
+		}
+		
+		
+	}
 	
-	public static void update(String command){}
+	public static void update(String command) throws WrongArgumentCountException{
+		
+		boolean done = false;
+		
+		try {
+			done = BirthdayDatabase.update(command);
+			
+			String[] input = command.split(" ");
+			
+			if(done && input.length == 4)
+				bw.write("UPDATE: OK " + input[1].trim() + " " + input[2].trim() + "\n");
+			else if(done && input.length == 6)
+				bw.write("UPDATE: OK " + input[4].trim() + " " + input[5].trim() + "\n");
+			
+		} catch (ParseException e) {
+			try {
+				bw.write("UPDATE: ERROR INVALID_DATE\n");
+			} catch (IOException e1) {}
+		} catch (InvalidDateFormatException e) {
+			try {
+				bw.write("UPDATE: ERROR INVALID_DATE_FORMAT\n");
+			} catch (IOException e1) {}
+		} catch (DuplicateEntryException e) {
+			try {
+				bw.write("UPDATE: ERROR DUPLICATE_ENTRY\n");
+			} catch (IOException e1) {}
+		} catch (IOException e) {
+			try {
+				bw.write("UPDATE: ERROR IOException\n");
+			} catch (IOException e1) {}
+		}
+	}
 	
 	public static void search(String command){}
 	

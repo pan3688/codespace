@@ -7,13 +7,21 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.regex.Pattern;
 
+/*
+ * The class performs data validation for DateOfBirth field
+ */
 public class BirthdayDataModel {
 
 	private Date dateOfBirth;
 	private String lastName;
 	private String firstName;
+	
+	/*
+	 * SimpleDateFormat checks for invalid dates such as 11/31/2011, 14/23/2008
+	 * Pattern is used to check the date format, every format other than MM/dd/yyyy is invalid
+	 */
 	private static SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
-	private static Pattern p = Pattern.compile("\\d{2}/\\d{2}/\\d{4}");
+	private static Pattern p = Pattern.compile("\\d+/\\d+/\\d{4}");
 	
 	
 	static{
@@ -23,12 +31,12 @@ public class BirthdayDataModel {
 	public BirthdayDataModel(String dateOfBirth, String lastName, String firstName) throws ParseException, InvalidDateFormatException {
 		super();
 		
-		if(p.matcher(dateOfBirth).matches()){
+		if(isDateValid(dateOfBirth)){
 			this.dateOfBirth = formatter.parse(dateOfBirth);
 			this.lastName = lastName;
 			this.firstName = firstName;
-		}else
-			throw new InvalidDateFormatException(dateOfBirth);
+		}
+		
 	}
 	
 	public void setDate(Date dateOfBirth) {
@@ -53,6 +61,16 @@ public class BirthdayDataModel {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return formatter.format(dateOfBirth) + "," + firstName + "," + lastName;
+		return formatter.format(dateOfBirth) + "," + lastName + "," + firstName;
+	}
+	
+	public static boolean isDateValid(String date) throws ParseException, InvalidDateFormatException{
+		
+		if(!p.matcher(date).matches())
+			throw new InvalidDateFormatException(date);
+		
+		formatter.parse(date);
+		
+		return true;
 	}
 }
