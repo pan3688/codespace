@@ -60,7 +60,6 @@ public class BirthdayDataModel {
 	
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return formatter.format(dateOfBirth) + "," + lastName + "," + firstName;
 	}
 	

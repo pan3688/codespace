@@ -1286,3 +1286,618 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp
 
 !ENTRY org.scala-ide.sdt.core 2 0 2014-08-17 20:46:31.620
 !MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+!SESSION 2014-08-19 14:34:54.365 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.7.0_55
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-19 14:35:31.586
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-19 14:35:31.675
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-19 14:35:31.755
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-19 14:35:31.756
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-19 14:35:31.764
+!MESSAGE Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-19 14:35:31.764
+!MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+!SESSION 2014-08-31 11:14:53.439 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-31 11:15:30.359
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-31 11:15:30.447
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-31 11:15:30.474
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-31 11:15:30.475
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-31 11:15:30.477
+!MESSAGE Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-31 11:15:30.478
+!MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-31 11:16:35.700
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-31 11:16:35.700
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-31 11:16:35.701
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-31 11:16:35.701
+!MESSAGE Project scala2.0 runs on platform default installation.
+!SESSION 2014-08-31 21:15:44.648 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-31 21:16:19.508
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-31 21:16:19.590
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-31 21:16:19.617
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-31 21:16:19.617
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-31 21:16:19.619
+!MESSAGE Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-31 21:16:19.620
+!MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-31 22:14:39.210
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-31 22:14:39.210
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-31 22:14:39.210
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-08-31 22:14:39.211
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.eclipse.jface 2 0 2014-08-31 22:20:27.372
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-08-31 22:20:27.372
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4b73282b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@755245bf,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+!SESSION 2014-09-01 10:09:45.633 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 10:10:29.919
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 10:10:29.998
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 10:10:30.027
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 10:10:30.027
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 10:10:30.037
+!MESSAGE Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 10:10:30.038
+!MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+!SESSION 2014-09-01 12:03:34.399 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 12:04:09.544
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 12:04:09.619
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 12:04:09.657
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 12:04:09.657
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 12:04:09.662
+!MESSAGE Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 12:04:09.662
+!MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+
+!ENTRY org.eclipse.jface 2 0 2014-09-01 12:49:20.199
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-09-01 12:49:20.199
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4dddb138,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6b000631,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+!SESSION 2014-09-01 17:03:35.967 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 17:04:17.028
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 17:04:17.147
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 17:04:17.158
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 17:04:17.159
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 17:04:17.178
+!MESSAGE Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 17:04:17.179
+!MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+!SESSION 2014-09-01 17:30:07.393 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 17:30:50.517
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 17:30:50.683
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 17:30:50.706
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 17:30:50.707
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 17:30:50.728
+!MESSAGE Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 17:30:50.729
+!MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+!SESSION 2014-09-01 19:27:33.376 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 19:28:13.716
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 19:28:13.826
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 19:28:13.830
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 19:28:13.831
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 19:28:13.832
+!MESSAGE Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 19:28:13.832
+!MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+!SESSION 2014-09-01 21:39:24.101 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 21:40:08.917
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 21:40:08.981
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 21:40:08.984
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 21:40:08.985
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 21:40:08.989
+!MESSAGE Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-01 21:40:08.990
+!MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+
+!ENTRY org.eclipse.jface 2 0 2014-09-02 01:15:46.143
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-09-02 01:15:46.143
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@137aa461,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6305d6d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+!SESSION 2014-09-02 11:40:57.168 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 11:41:35.989
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 11:41:36.098
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 11:41:36.103
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 11:41:36.104
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 11:41:36.111
+!MESSAGE Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 11:41:36.112
+!MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+!SESSION 2014-09-02 12:29:23.226 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 12:30:03.458
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 12:30:03.626
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 12:30:03.652
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 12:30:03.653
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 12:30:03.655
+!MESSAGE Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 12:30:03.655
+!MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+!SESSION 2014-09-02 14:42:27.791 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 14:43:06.906
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 14:43:06.972
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 14:43:06.989
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 14:43:06.990
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 14:43:07.000
+!MESSAGE Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 14:43:07.002
+!MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 14:50:06.405
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 14:50:06.405
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 14:50:06.406
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 14:50:06.406
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.eclipse.jface 2 0 2014-09-02 14:59:41.807
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-09-02 14:59:41.807
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@54d81594,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3670d310,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+!SESSION 2014-09-02 15:51:03.363 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 15:51:39.988
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 15:51:40.086
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 15:51:40.097
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 15:51:40.097
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 15:51:40.101
+!MESSAGE Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 15:51:40.102
+!MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+!SESSION 2014-09-02 17:07:51.211 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 17:08:14.947
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 17:08:14.956
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 17:08:14.957
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 17:08:14.957
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 17:08:14.958
+!MESSAGE Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-02 17:08:14.958
+!MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+!SESSION 2014-09-04 14:36:34.435 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 14:37:10.777
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 14:37:10.847
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 14:37:10.867
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 14:37:10.868
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 14:37:10.873
+!MESSAGE Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 14:37:10.873
+!MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 14:37:37.882
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 14:37:37.883
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 14:37:37.883
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 14:37:37.883
+!MESSAGE Project scala2.0 runs on platform default installation.
+!SESSION 2014-09-04 15:57:47.489 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 15:58:24.373
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 15:58:24.504
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 15:58:24.518
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 15:58:24.518
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 15:58:24.535
+!MESSAGE Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 15:58:24.535
+!MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+!SESSION 2014-09-04 17:03:37.850 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 17:04:18.303
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 17:04:18.439
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 17:04:18.439
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 17:04:18.440
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 17:04:18.442
+!MESSAGE Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 17:04:18.442
+!MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+!SESSION 2014-09-04 17:39:26.118 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 17:40:10.647
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 17:40:10.743
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 17:40:10.795
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 17:40:10.796
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 17:40:10.796
+!MESSAGE Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 17:40:10.797
+!MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 17:55:29.346
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 17:55:29.346
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 17:55:29.347
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-04 17:55:29.348
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.eclipse.jface 2 0 2014-09-04 18:43:47.400
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-09-04 18:43:47.400
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@16a71aa6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4bce51a6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)

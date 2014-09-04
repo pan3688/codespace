@@ -1,16 +1,11 @@
 package hw1.Database;
 
-import hw1.Exceptions.DuplicateEntryException;
-import hw1.Exceptions.InvalidDateFormatException;
-import hw1.Exceptions.InvalidRangeException;
-import hw1.Exceptions.WrongArgumentCountException;
 import hw1.Model.BirthdayDataModel;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -30,12 +25,12 @@ public class BirthdayDatabase {
 		
 	}
 	
-	public static boolean add(BirthdayDataModel model) throws DuplicateEntryException{
+	public static boolean add(BirthdayDataModel model){
 		
 		if(isOriginal(model))
 			inMemoryDb.add(model);
 		else
-			throw new DuplicateEntryException();
+			return false;
 		
 		return true;
 	}
@@ -64,13 +59,16 @@ public class BirthdayDatabase {
 		return true;
 	}
 	
+	@SuppressWarnings("deprecation")
 	public static boolean update(String command) 
-			throws WrongArgumentCountException, ParseException, InvalidDateFormatException, DuplicateEntryException{
+			throws Exception{
 		
 		String[] input = command.trim().split(" ");
 		
 		if(input.length != 4 && input.length != 6)
-			throw new WrongArgumentCountException(command);
+			throw new Exception(input[0].trim() + ": ERROR WRONG_ARGUMENT_COUNT\n");
+		
+		boolean found = false;
 		
 		if(BirthdayDataModel.isDateValid(input[3].trim())){
 			
@@ -79,8 +77,12 @@ public class BirthdayDatabase {
 				for(BirthdayDataModel model : inMemoryDb){
 					
 					if(model.getFirstName().equalsIgnoreCase(input[1].trim()) 
-							&& model.getLastName().equalsIgnoreCase(input[2].trim()))
+							&& model.getLastName().equalsIgnoreCase(input[2].trim())){
+						
 						model.setDate(new Date(input[3].trim()));
+						found = true;
+					}
+						
 				}
 			}else if(input.length == 6){
 				
@@ -89,6 +91,8 @@ public class BirthdayDatabase {
 				/*
 				 * if the oldFirstName matches newFirstName & oldLastName matches newLastName,
 				 * then we are essentially updating the same record
+				 * the below if condition will check this scenario and call the same update
+				 * method with 3 arguments
 				 */
 				if(input[1].trim().equalsIgnoreCase(temp.getFirstName()) && input[2].trim().equalsIgnoreCase(temp.getLastName()))
 					return update("UPDATE " + temp.getFirstName() + " " + temp.getLastName() + " " + input[3].trim());
@@ -101,24 +105,26 @@ public class BirthdayDatabase {
 							model.setDate(new Date(input[3].trim()));
 							model.setFirstName(temp.getFirstName());
 							model.setLastName(temp.getLastName());
+							found = true;
 						}
 					}
 				}else
-					throw new DuplicateEntryException();
+					return found;
 			}
 		}
 		
-		return true;
+		return found;
 	}
 	
-	public static List<BirthdayDataModel> query(String range,BufferedWriter bw) 
-			throws InvalidRangeException,NumberFormatException, IOException{
+	@SuppressWarnings("deprecation")
+	public static List<BirthdayDataModel> query(String range) 
+			throws NumberFormatException, Exception{
 		
 		int intRange = Integer.parseInt(range);
 		ArrayList<BirthdayDataModel> match = new ArrayList<BirthdayDataModel>();
 		
 		if(intRange < 0)
-			throw new InvalidRangeException(); 
+			throw new Exception("SHOW: ERROR INVALID_INT\n"); 
 		
 		Date today = calendar.getTime();
 		
@@ -178,14 +184,14 @@ public class BirthdayDatabase {
 		return inMemoryDb.size();
 	}
 	
-	public static List<BirthdayDataModel> searhNeedle(String needle){
+	public static List<BirthdayDataModel> searchNeedle(String needle){
 		
 		List<BirthdayDataModel> match = new ArrayList<BirthdayDataModel>();
 		
 		for(BirthdayDataModel model : inMemoryDb){
 			
-			if(model.getFirstName().toLowerCase().contains(needle.toLowerCase()) 
-					|| model.getLastName().toLowerCase().contains(needle.toLowerCase()))
+			if(model.getFirstName().contains(needle) 
+					|| model.getLastName().contains(needle))
 				match.add(model);
 			
 		}
