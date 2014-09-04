@@ -115,7 +115,7 @@ public class Birthdays {
 					} catch (IOException e1) {};
 				} catch (Exception e) {
 					try {
-						if(e.getMessage() != null || !e.getMessage().equals(""))
+						if(e.getMessage() != null)
 							bw.write(e.getMessage());
 					}catch(IOException e1){}
 				}
@@ -218,7 +218,7 @@ public class Birthdays {
 			} catch (IOException e1) {}
 		} catch (Exception e) {
 			try {
-				if(e.getMessage() != null || !e.getMessage().equals(""))
+				if(e.getMessage() != null)
 					bw.write(e.getMessage());
 			} catch (IOException e1) {}
 		}
@@ -251,7 +251,7 @@ public class Birthdays {
 			} catch (IOException e1) {}
 		} catch (Exception e) {
 			try {
-				if(e.getMessage() != null || !e.getMessage().equals(""))
+				if(e.getMessage() != null)
 					bw.write(e.getMessage());
 			} catch (IOException e1) {}
 		} 
@@ -289,7 +289,7 @@ public class Birthdays {
 			} catch (IOException e1) {}
 		} catch (Exception e) {
 			try {
-				if(e.getMessage() != null || !e.getMessage().equals(""))
+				if(e.getMessage() != null)
 					bw.write(e.getMessage());
 			} catch (IOException e1) {}
 		}
