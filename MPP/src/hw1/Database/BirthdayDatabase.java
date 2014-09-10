@@ -109,7 +109,7 @@ public class BirthdayDatabase {
 						}
 					}
 				}else
-					return found;
+					throw new Exception("UPDATE: ERROR DUPLICATE_ENTRY\n");
 			}
 		}
 		
