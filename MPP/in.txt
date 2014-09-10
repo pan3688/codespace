@@ -1,15 +1,40 @@
-load csvinput.csv  
-ADD John Doe 9/5/2001   
+ADD John Doe 9/5/2001
+LOAD csvinput.csv
 ADD Mike Blank 9/2/2002
-ADD Dan Russ 1-7/2003
+ADD Dan Russ 1/7/2003
 ADD Luke Mika 9/24/1002
 SHOW 0
 UPDATE Mike Blank 9/4/2003   
 UPDATE John Doe 8/5/2012 John Doe
-SHOW 365
+SHOW 180
 SEARCH e
 UPDATE abc def 7/8/1997 Mike Blank
 SHOW -8
 ADD Melony 8/8/1994
-UPDATE Melony  9/9/1994 Teressa Ben
+UPDATE Melony prakash 9/9/1994 Teressa Ben
+SHOW FIVE
 STORE db.csv
+ADD xxx Russ 1/77/2003
+CLEAR
+
+CLEAR 2
+UPDATE
+LOAD db.csv
+ADD aaa bbb 9-2-2002
+
+ADD prakash Melony 9/9/1991
+STORE db.csv
+SEARCH pra
+UPDATE Melony prakash 9/9/1994 Teressa Ben
+SHOW 365
+TEST
+LOAD csvinput
+LOAD 122.csv
+LOAD 123csvinput.csv
+LOAD csvinput1.csv
+STORE 222
+SHOW 100
+STORE ABC
+STORE ABC12
+STORE ABC12.csv
+SHOW 363

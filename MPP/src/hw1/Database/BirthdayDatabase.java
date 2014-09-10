@@ -1,5 +1,6 @@
 package hw1.Database;
 
+import hw1.Exceptions.DuplicateEntryException;
 import hw1.Model.BirthdayDataModel;
 
 import java.io.BufferedWriter;
@@ -25,12 +26,12 @@ public class BirthdayDatabase {
 		
 	}
 	
-	public static boolean add(BirthdayDataModel model){
+	public static boolean add(BirthdayDataModel model) throws DuplicateEntryException{
 		
 		if(isOriginal(model))
 			inMemoryDb.add(model);
 		else
-			return false;
+			throw new DuplicateEntryException();
 		
 		return true;
 	}
@@ -47,7 +48,6 @@ public class BirthdayDatabase {
 				storeDB.write(bdays.toString() + "\n");
 				
 			}
-			storeDB.write("STORE: OK " + inMemoryDb.size() + "\n");
 		} finally{
 			
 			try {
@@ -126,15 +126,11 @@ public class BirthdayDatabase {
 		if(intRange < 0)
 			throw new Exception("SHOW: ERROR INVALID_INT\n"); 
 		
-		System.out.println("Show --" + intRange);
-		
 		Date today = calendar.getTime();
-		System.out.println("today is " + today);
 		
 		Calendar newCalendar = GregorianCalendar.getInstance();
-		newCalendar.roll(Calendar.DATE, intRange);
+		newCalendar.add(Calendar.DATE, intRange);
 		Date till = newCalendar.getTime();
-		System.out.println("till " + till);
 		
 		Calendar tempCal = null;
 		Date tempDate = null;
@@ -145,15 +141,26 @@ public class BirthdayDatabase {
 			
 			tempCal.set(Calendar.DAY_OF_MONTH, model.getDate().getDate());
 			tempCal.set(Calendar.MONTH, model.getDate().getMonth());
+			tempCal.set(Calendar.YEAR, today.getYear() + 1900);
 			
 			tempDate = tempCal.getTime();
-			
-			System.out.println(tempDate);
 			
 			if(today.compareTo(tempDate) == 0)
 				match.add(model);
 			else if(till.compareTo(tempDate) >=0 && today.compareTo(tempDate) < 0){
 				match.add(model);
+			}else{
+				
+				/*
+				 * If the integer range extends in the next year,
+				 * like SHOW 365,then this else block will ensure 
+				 * that all the dates are considered 
+				 */
+				tempCal.set(Calendar.YEAR, till.getYear() + 1900);
+				tempDate = tempCal.getTime();
+				
+				if(till.compareTo(tempDate) >=0 && today.compareTo(tempDate) < 0)
+					match.add(model);
 			}
 		}
 		

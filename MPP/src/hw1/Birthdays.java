@@ -1,6 +1,7 @@
 package hw1;
 
 import hw1.Database.BirthdayDatabase;
+import hw1.Exceptions.DuplicateEntryException;
 import hw1.Exceptions.InvalidDateFormatException;
 import hw1.Model.BirthdayDataModel;
 
@@ -13,11 +14,19 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class Birthdays {
 		
 	private static BufferedReader br = null;
 	private static BufferedWriter bw = null;
+	
+	/*
+	 * csv file must have a valid name (LOAD and STORE arguments)
+	 * first character should be alphabetical
+	 * folllowed by 0 or more alphanumeric characters and terminating in '.csv' extension
+	 */
+	private static Pattern p = Pattern.compile("^[a-zA-Z]\\w*.csv");
 	
 	public static void main(String[] args) {
 		
@@ -47,7 +56,7 @@ public class Birthdays {
 					else if(command.startsWith("SEARCH"))
 						search(command);
 					else if(command.equals(""))
-						;							// to ignore blank lines
+						;							// to ignore blank lines in the in.txt
 					else
 						throw new Exception(command.split(" ")[0].trim() + ": ERROR UNKNOWN_COMMAND\n");
 				} catch (Exception e) {
@@ -73,6 +82,12 @@ public class Birthdays {
 		
 		String[] input = command.split(" ");
 		
+		if(input.length != 2)
+			throw new Exception("LOAD: ERROR WRONG_ARGUMENT_COUNT\n");
+		
+		if(!p.matcher(input[1].trim()).matches())
+			throw new Exception("LOAD: ERROR INVALID_FILE_EXTENSION\n");
+		
 		String csvLine = "";
 		String[] csvParts = null;
 		
@@ -82,15 +97,13 @@ public class Birthdays {
 		
 		boolean load = false;
 		
-		if(input.length != 2)
-			throw new Exception(input[0].trim() + ": ERROR WRONG_ARGUMENT_COUNT\n");
-		
 		try {
 			brDatabaseLoad = new BufferedReader(new FileReader(input[1].trim()));
 			
 			csvLine = brDatabaseLoad.readLine();
 			
 			while(csvLine != null){
+				load = false;
 				
 				csvParts = csvLine.split(",");
 				
@@ -100,14 +113,18 @@ public class Birthdays {
 				 * the load process will continue ignoring the duplicate record
 				 */
 				try {
-					model = new BirthdayDataModel(csvParts[0].trim(), csvParts[1].trim(), csvParts[2].trim());
-					
-					load = BirthdayDatabase.add(model);
-					
+					if(csvParts.length == 3){
+						model = new BirthdayDataModel(csvParts[0].trim(), csvParts[1].trim(), csvParts[2].trim());
+						load = BirthdayDatabase.add(model);
+					}
 					if(load)
 						count++;
-					else
-						throw new Exception("LOAD: ERROR DUPLICATE_ENTRY\n");
+					/*else
+						throw new Exception("LOAD: ERROR DUPLICATE_ENTRY\n");*/
+				} catch(DuplicateEntryException e){
+					try {
+						bw.write("LOAD: ERROR DUPLICATE_ENTRY\n");
+					}catch(IOException e1){}
 				} catch (InvalidDateFormatException e) {
 					try {
 						bw.write("LOAD: ERROR INVALID_DATE_FORMAT " + e.getCausedBy()+ "\n");
@@ -119,7 +136,7 @@ public class Birthdays {
 				} catch (Exception e) {
 					try {
 						if(e.getMessage() != null)
-							bw.write(e.getMessage());
+							bw.write(e.getMessage() + "\n");
 					}catch(IOException e1){}
 				}
 				
@@ -152,7 +169,10 @@ public class Birthdays {
 		String[] input = command.trim().split(" ");
 		
 		if(input.length != 2)
-			throw new Exception(input[0].trim() + ": ERROR WRONG_ARGUMENT_COUNT\n");
+			throw new Exception("STORE: ERROR WRONG_ARGUMENT_COUNT\n");
+		
+		if(!p.matcher(input[1].trim()).matches())
+			throw new Exception("STORE: ERROR INVALID_FILE_EXTENSION\n");
 		
 		boolean done = false;
 		
@@ -170,9 +190,14 @@ public class Birthdays {
 		
 	}
 	
-	public static void clear(String command){
+	public static void clear(String command) throws Exception{
 		
 		boolean done = false;
+		
+		String input[] = command.split(" ");
+		
+		if(input.length != 1)
+			throw new Exception(input[0].trim() + ": ERROR WRONG_ARGUMENT_COUNT\n");
 		
 		try {
 			done = BirthdayDatabase.clear();
@@ -204,9 +229,13 @@ public class Birthdays {
 			
 			if(done)
 				bw.write("ADD: OK " + model.getFirstName() + " " + model.getLastName() + "\n");
-			else
-				throw new Exception("ADD: ERROR DUPLICATE_ENTRY \n");
+			/*else
+				throw new Exception("ADD: ERROR DUPLICATE_ENTRY \n");*/
 			
+		} catch(DuplicateEntryException e){
+			try {
+				bw.write("ADD: ERROR DUPLICATE_ENTRY\n");
+			}catch(IOException e1){}
 		} catch (InvalidDateFormatException e) {
 			try {
 				bw.write("ADD: ERROR INVALID_DATE_FORMAT\n");
