@@ -46,6 +46,8 @@ public class Birthdays {
 						update(command);
 					else if(command.startsWith("SEARCH"))
 						search(command);
+					else if(command.equals(""))
+						;							// to ignore blank lines
 					else
 						throw new Exception(command.split(" ")[0].trim() + ": ERROR UNKNOWN_COMMAND\n");
 				} catch (Exception e) {
@@ -93,8 +95,9 @@ public class Birthdays {
 				csvParts = csvLine.split(",");
 				
 				/*
-				 * in case the input csv file contains any duplicates,
-				 * the load process will continue after the duplicate record
+				 * in case the input csv file contains any duplicate records,
+				 * or has records already present in the database then
+				 * the load process will continue ignoring the duplicate record
 				 */
 				try {
 					model = new BirthdayDataModel(csvParts[0].trim(), csvParts[1].trim(), csvParts[2].trim());

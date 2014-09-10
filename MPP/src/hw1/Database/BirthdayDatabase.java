@@ -126,11 +126,15 @@ public class BirthdayDatabase {
 		if(intRange < 0)
 			throw new Exception("SHOW: ERROR INVALID_INT\n"); 
 		
+		System.out.println("Show --" + intRange);
+		
 		Date today = calendar.getTime();
+		System.out.println("today is " + today);
 		
 		Calendar newCalendar = GregorianCalendar.getInstance();
 		newCalendar.roll(Calendar.DATE, intRange);
 		Date till = newCalendar.getTime();
+		System.out.println("till " + till);
 		
 		Calendar tempCal = null;
 		Date tempDate = null;
@@ -144,9 +148,11 @@ public class BirthdayDatabase {
 			
 			tempDate = tempCal.getTime();
 			
+			System.out.println(tempDate);
+			
 			if(today.compareTo(tempDate) == 0)
 				match.add(model);
-			else if(today.compareTo(tempDate) < 0 && till.compareTo(tempDate) >=0){
+			else if(till.compareTo(tempDate) >=0 && today.compareTo(tempDate) < 0){
 				match.add(model);
 			}
 		}
