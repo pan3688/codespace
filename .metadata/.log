@@ -3662,3 +3662,64 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp
 
 !ENTRY org.scala-ide.sdt.core 2 0 2014-09-21 14:52:27.209
 !MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+
+!ENTRY org.eclipse.jface 2 0 2014-09-21 16:31:46.913
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-09-21 16:31:46.913
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@17a2dc90,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7dd04575,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.scala-ide.sdt.core 4 0 2014-09-21 18:25:22.974
+!MESSAGE Error during askOption
+!STACK 0
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at scala.tools.nsc.interactive.Response.get(Response.scala:77)
+	at org.scalaide.core.compiler.ScalaPresentationCompiler.askOption(ScalaPresentationCompiler.scala:212)
+	at org.scalaide.core.compiler.ScalaPresentationCompiler.askOption(ScalaPresentationCompiler.scala:203)
+	at org.scalaide.core.compiler.ScalaPresentationCompilerProxy.liftedTree1$1(ScalaPresentationCompilerProxy.scala:153)
+	at org.scalaide.core.compiler.ScalaPresentationCompilerProxy.create(ScalaPresentationCompilerProxy.scala:148)
+	at org.scalaide.core.compiler.ScalaPresentationCompilerProxy.initialize(ScalaPresentationCompilerProxy.scala:108)
+	at org.scalaide.core.compiler.ScalaPresentationCompilerProxy.obtainPc$1(ScalaPresentationCompilerProxy.scala:75)
+	at org.scalaide.core.compiler.ScalaPresentationCompilerProxy.apply(ScalaPresentationCompilerProxy.scala:94)
+	at org.scalaide.core.compiler.InteractiveCompilationUnit$class.withSourceFile(InteractiveCompilationUnit.scala:69)
+	at org.scalaide.core.internal.jdt.model.ScalaClassFile.withSourceFile(ScalaClassFile.scala:24)
+	at org.scalaide.core.internal.jdt.model.ScalaCompilationUnit$class.buildStructure(ScalaCompilationUnit.scala:113)
+	at org.scalaide.core.internal.jdt.model.ScalaClassFile.buildStructure(ScalaClassFile.scala:24)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:259)
+	at org.eclipse.jdt.internal.core.SourceRefElement.generateInfos(SourceRefElement.java:107)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:557)
+	at org.eclipse.jdt.internal.core.BinaryType.getElementInfo(BinaryType.java:287)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:280)
+	at org.eclipse.jdt.internal.core.BinaryType.isAnonymous(BinaryType.java:700)
+	at org.eclipse.jdt.internal.ui.viewsupport.JavaElementLabelComposer.appendTypeLabel(JavaElementLabelComposer.java:1001)
+	at org.eclipse.jdt.internal.ui.viewsupport.JavaElementLabelComposer.appendElementLabel_aroundBody0(JavaElementLabelComposer.java:287)
+	at org.eclipse.jdt.internal.ui.viewsupport.JavaElementLabelComposer$AjcClosure1.run(JavaElementLabelComposer.java:1)
+	at scala.tools.eclipse.contribution.weaving.jdt.ui.javaeditor.HoversAspect.ajc$around$scala_tools_eclipse_contribution_weaving_jdt_ui_javaeditor_HoversAspect$2$6e03bb36proceed(HoversAspect.aj:45)
+	at scala.tools.eclipse.contribution.weaving.jdt.ui.javaeditor.HoversAspect.ajc$around$scala_tools_eclipse_contribution_weaving_jdt_ui_javaeditor_HoversAspect$2$6e03bb36(HoversAspect.aj:47)
+	at org.eclipse.jdt.internal.ui.viewsupport.JavaElementLabelComposer.appendElementLabel(JavaElementLabelComposer.java:260)
+	at org.eclipse.jdt.internal.ui.viewsupport.JavaElementLinks.getElementLabel(JavaElementLinks.java:704)
+	at org.eclipse.jdt.internal.ui.viewsupport.JavaElementLinks.getElementLabel(JavaElementLinks.java:686)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getInfoText(JavadocHover.java:737)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:683)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:607)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:599)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:85)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
