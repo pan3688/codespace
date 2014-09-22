@@ -7,9 +7,20 @@ public class Peterson implements Lock{
 	private volatile boolean flag[] = new boolean[2];
 	private volatile int victim;
 	
-	@Override
-	public void lock() {
-		int i = ((TestThread)Thread.currentThread()).getThreadId();
+	/*
+	 * (non-Javadoc)
+	 * @see hw2.edu.vt.ece.locks.Lock#lock()
+	 * To comply with Lock Interface
+	 */
+	public void lock(){
+
+	}
+	
+	/*
+	 * Actual locking method
+	 */
+	public void lock(int i) {
+//		int i = ((TestThread)Thread.currentThread()).getThreadId();
 		int j = 1-i;
 		flag[i] = true;
 		victim = i;
@@ -17,9 +28,20 @@ public class Peterson implements Lock{
 //			System.out.println("Thread " + i + " waiting");
 	}
 
-	@Override
-	public void unlock() {
-		int i = ((TestThread)Thread.currentThread()).getThreadId();
+	/*
+	 * (non-Javadoc)
+	 * @see hw2.edu.vt.ece.locks.Lock#unlock()
+	 * To comply with Lock Interface
+	 */
+	public void unlock(){
+		
+	}
+	
+	/*
+	 * Actual unlock method
+	 */
+	public void unlock(int i) {
+//		int i = ((TestThread)Thread.currentThread()).getThreadId();
 		flag[i] = false;
 	}
 

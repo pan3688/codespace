@@ -19,7 +19,7 @@ public class Test {
 
 	public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 		String lockClass = (args.length==0 ? TREE_LOCK : args[0]);
-		final Counter counter = new SharedCounter(0, (Lock)Class.forName("hw2.edu.vt.ece.locks." + lockClass).newInstance());
+		final Counter counter = new SharedCounter(0, (Lock)Class.forName("hw2.treelock." + lockClass).newInstance());
 		for(int t=0; t<THREAD_COUNT; t++)
 			new TestThread(counter).start();
 	}
