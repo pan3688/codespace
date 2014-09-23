@@ -61,7 +61,8 @@ public class TreeLock implements Lock {
 		tree.add(15);
 		
 		/*
-		 * array of lock nodes, including leaf and non-leaf elements 
+		 * array of lock nodes, including leaf and non-leaf elements,
+		 * will have id's from 1 to 15 but indexed from 0 to 14
 		 */
 		treeLock = new Peterson[15];
 		for(int i=0; i < 15; i ++)
@@ -156,18 +157,18 @@ public class TreeLock implements Lock {
 	}
 	
 	/*
-	 * Method for testing the utility methods
+	 * Method for testing the utility method
 	 */
 	public static void main(String[] args) {
 		
 		TreeLock treeLock = new TreeLock();
-	//	for(int i = 0;i<16;i++){
-	//		System.out.print(i);
-			for(int j : treeLock.getPath(10))
+		for(int i = 0;i<16;i++){
+			System.out.print(i);
+			for(int j : treeLock.getPath(i))
 				System.out.print("\t" +j);
 			
-	//		System.out.println("");
-	//	}
+			System.out.println("");
+		}
 	}
 	
 	
