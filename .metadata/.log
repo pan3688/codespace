@@ -3769,3 +3769,119 @@ Binding(CTRL+D,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.textEditorScope,,,system)
+!SESSION 2014-09-22 09:58:39.120 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-22 09:59:15.966
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-22 09:59:16.069
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-22 09:59:16.082
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-22 09:59:16.082
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-22 09:59:16.083
+!MESSAGE Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-22 09:59:16.083
+!MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+
+!ENTRY org.eclipse.jface 2 0 2014-09-22 10:02:51.307
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-09-22 10:02:51.307
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2a03b510,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@25a1bf6a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+!SESSION 2014-09-22 18:26:00.792 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-22 18:26:37.169
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-22 18:26:37.249
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-22 18:26:37.258
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-22 18:26:37.258
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-22 18:26:37.259
+!MESSAGE Preference scala.compiler.sourceLevel was uninitialized, setting default to 2.11.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-22 18:26:37.259
+!MESSAGE Preference scala.compiler.installation was uninitialized, setting default to 2.11.
+
+!ENTRY org.eclipse.jface 2 0 2014-09-22 19:03:35.451
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-09-22 19:03:35.451
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4ec18090,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@21e698bc,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-22 20:58:36.602
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-22 20:58:36.602
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-22 20:58:36.603
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-22 20:58:36.603
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-22 20:58:43.270
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-22 20:58:43.270
+!MESSAGE Project scala2.0 runs on platform default installation.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-22 20:58:43.271
+!MESSAGE Project scala2.0 has platform default sourceLevel.
+
+!ENTRY org.scala-ide.sdt.core 2 0 2014-09-22 20:58:43.272
+!MESSAGE Project scala2.0 runs on platform default installation.

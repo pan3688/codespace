@@ -29,6 +29,9 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="hw2.treelock.TreeLock"/>
 <fullyQualifiedTypeName name="hw2.edu.vt.ece.util.Tree"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="hw2.edu.vt.ece.locks.Peterson"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="hw2.edu.vt.ece.locks.Lock"/>
 </qualifiedTypeNameHistroy>
