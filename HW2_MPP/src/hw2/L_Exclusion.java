@@ -11,7 +11,7 @@ public class L_Exclusion implements Lock {
 	private final int L;			// this variable will store the value of l (small L) i.e. the number of threads allowed in CS
 
 	public L_Exclusion() {
-		this(3);
+		this(2);
 	}
 
 	public L_Exclusion(int n){
@@ -30,7 +30,8 @@ public class L_Exclusion implements Lock {
 		int me = ((TestThread)Thread.currentThread()).getThreadId();
 		
 		/*
-		 * number of waiting levels needed will be level.length minus L since L threads can be in CS at the same time
+		 * number of waiting levels needed will be ( level.length minus L ) 
+		 * since L threads can be in CS at the same time
 		 */
 		for(int i=1; i<=level.length-L; i++){
 			level[me] = i;
