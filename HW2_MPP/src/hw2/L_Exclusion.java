@@ -45,7 +45,7 @@ public class L_Exclusion implements Lock {
 				}
 			}while(found);		// since i runs from 1 till (n-L) ,
 								// more than 1 thread coming out from this do-while is a possibility 
-								// and hence they can enter CS
+								// and hence that thread can enter CS
 			
 			while(l>=L);		// if already L threads are in CS, then wait...
 		}

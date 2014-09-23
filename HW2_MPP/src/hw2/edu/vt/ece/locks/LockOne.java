@@ -4,7 +4,11 @@ import hw2.edu.vt.ece.bench.TestThread;
 
 public class LockOne implements Lock{
 
-	private boolean[] flag = new boolean[2];
+	/*
+	 * fixed
+	 * flag array should be volatile -- Programming Assignment Question 1
+	 */
+	private volatile boolean[] flag = new boolean[2];
 	
 	@Override
 	public void lock() {

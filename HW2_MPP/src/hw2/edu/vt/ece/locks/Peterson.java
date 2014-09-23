@@ -1,7 +1,5 @@
 package hw2.edu.vt.ece.locks;
 
-import hw2.edu.vt.ece.bench.TestThread;
-
 public class Peterson implements Lock{
 
 	private volatile boolean flag[] = new boolean[2];

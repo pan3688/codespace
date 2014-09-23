@@ -144,7 +144,7 @@ public class TreeLock implements Lock {
 	 * Method for testing the B-Tree
 	 * prints all the nodes and their child nodes
 	 */
-	public static void printLeftRight(Tree node){
+	public static void printLeftRight(Tree<Integer> node){
 		
 		if(node.getLeftChild() !=null || node.getRightChild() != null){
 			System.out.println("Node\t" + node.getData() + 
@@ -159,19 +159,6 @@ public class TreeLock implements Lock {
 	 * Method for testing the utility methods
 	 */
 	public static void main(String[] args) {
-		/*Tree<Integer> tree = new TreeLock(8).tree;
-		
-		Tree<Integer> itr = tree;
-		
-		do{
-			System.out.println(itr.getData());
-		}while((itr = itr.getLeftChild())!=null);
-		// print right branch from the root till the right-most leaf
-		itr = tree;
-		do{
-			System.out.println(itr.getData());
-		}while((itr = itr.getRightChild())!=null);*/
-//		printLeftRight(treeLock.tree);
 		
 		TreeLock treeLock = new TreeLock();
 	//	for(int i = 0;i<16;i++){
