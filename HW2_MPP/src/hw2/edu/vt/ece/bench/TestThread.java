@@ -6,7 +6,7 @@ package hw2.edu.vt.ece.bench;
  */
 public class TestThread extends Thread{
 	private static int ID_GEN = 0;
-	private static final int MAX_COUNT = 1000;
+	private static final int MAX_COUNT = 10;
 
 	private Counter counter;
 	private int id;

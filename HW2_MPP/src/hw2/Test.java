@@ -15,7 +15,7 @@ public class Test {
 	 * Change Thread_Count to 16 for testing TreeLock algorithm
 	 * Change back Thread_Count to 2 for testing the rest
 	 */
-	private static final int THREAD_COUNT = 2;
+	private static final int THREAD_COUNT = 16;
 	
 	private static final String LOCK_ONE = "LockOne";
 	private static final String LOCK_TWO = "LockTwo";
