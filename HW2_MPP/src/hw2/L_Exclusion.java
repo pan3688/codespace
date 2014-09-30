@@ -36,22 +36,27 @@ public class L_Exclusion implements Lock {
 			boolean found = false;
 			do{
 				for(int k=0; k<level.length; k++){
-					if(k!=me && (found = (level[k] >= i && victim[i] == me /*&& l<L*/))){
+					if(k!=me && (found = (level[k] >= i && victim[i] == me))){
 						break;
 					}
 				}
+				/*
+				 * To consider l-starvation-freedom
+				 */
+				if(i==level.length-L && l<L && found)
+					found=false;
 			}while(found);		// since i runs from 1 till (n-L) ,
 								// more than 1 thread coming out from this do-while is a possibility 
 								// and hence that thread can enter CS
 			
 		}
-//		l++;
+		l++;
 	}
 
 	@Override
 	public void unlock() {
 		int me = ((TestThread)Thread.currentThread()).getThreadId();
 		level[me] = 0;
-//		l--;
+		l--;
 	}
 }

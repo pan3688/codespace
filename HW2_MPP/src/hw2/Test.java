@@ -25,7 +25,7 @@ public class Test {
 	private static final String L_Exclusion = "L_Exclusion";
 
 	public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
-		String lockClass = (args.length==0 ? TREE_LOCK : args[0]);
+		String lockClass = (args.length==0 ? PETERSON : args[0]);
 		final Counter counter = new SharedCounter(0, (Lock)Class.forName("hw2." + lockClass).newInstance());
 		for(int t=0; t<THREAD_COUNT; t++)
 			new TestThread(counter).start();
