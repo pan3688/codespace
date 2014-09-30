@@ -1,13 +1,13 @@
-package hw3;
+package hw3.queue.implementations;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class SequentialSubqueueSuperQueue<T> implements Queue<T> {
+public class SequentialSuperQueue<T> implements Queue<T> {
 
 	private Queue<T>[] subqueus = null;
-	private final int subqueue_capacity = 1000;
+	private final int subqueue_capacity = 10000;
 	
-	public SequentialSubqueueSuperQueue(int N) {
+	public SequentialSuperQueue(int N) {
 		subqueus = new SimpleQueue[N];
 		
 		for(int i=0;i<N;i++)

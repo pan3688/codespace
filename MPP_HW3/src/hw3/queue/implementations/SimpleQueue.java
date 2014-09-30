@@ -1,4 +1,4 @@
-package hw3;
+package hw3.queue.implementations;
 
 public class SimpleQueue<T> implements Queue<T>{
 

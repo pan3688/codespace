@@ -1,15 +1,14 @@
-package hw3;
+package hw3.queue.implementations;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class ConcurrentSubqueueSuperQueue<T> implements Queue<T> {
+public class ConcurrentSuperQueue<T> implements Queue<T> {
 
 	private java.util.Queue<T>[] queue = null;
 	private final int subqueue_capacity = 1000;
 	
-	public ConcurrentSubqueueSuperQueue(int N) {
-		// TODO Auto-generated constructor stub
+	public ConcurrentSuperQueue(int N) {
 		
 		queue = (java.util.Queue<T> []) new java.util.concurrent.ConcurrentLinkedQueue[N];
 		
