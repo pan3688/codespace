@@ -15,7 +15,7 @@ public class SimpleQueue<T> implements Queue<T>{
 	@Override
 	public void enqueue(T t) throws Exception {
 		if(tail-head == items.length)
-			throw new Exception("Queue is full.");
+			throw new Exception();
 		
 		items[tail % items.length] = t;
 		
@@ -25,7 +25,7 @@ public class SimpleQueue<T> implements Queue<T>{
 	@Override
 	public T dequeue() throws Exception {
 		if(tail==head)
-			throw new Exception("Queue is empty.");
+			throw new Exception();
 		
 		T t = items[head % items.length];
 		

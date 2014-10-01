@@ -5,9 +5,9 @@ import java.util.concurrent.ThreadLocalRandom;
 public class SequentialSuperQueue<T> implements Queue<T> {
 
 	private Queue<T>[] subqueus = null;
-	private final int subqueue_capacity = 10000;
+	private final int subqueue_capacity = 1000000;
 	
-	public SequentialSuperQueue(int N) {
+	public SequentialSuperQueue(Integer N) {
 		subqueus = new SimpleQueue[N];
 		
 		for(int i=0;i<N;i++)
@@ -17,6 +17,8 @@ public class SequentialSuperQueue<T> implements Queue<T> {
 	@Override
 	public void enqueue(T t) {
 		int n = ThreadLocalRandom.current().nextInt() % subqueus.length;
+		
+		if(n<0)	n=-n;
 		
 		synchronized (subqueus[n]) {
 			try {
@@ -30,6 +32,7 @@ public class SequentialSuperQueue<T> implements Queue<T> {
 	@Override
 	public T dequeue() {
 		int n = ThreadLocalRandom.current().nextInt() % subqueus.length;
+		if(n<0)	n=-n;
 		
 		T t = null;
 		synchronized (subqueus[n]) {

@@ -8,7 +8,7 @@ public class ConcurrentSuperQueue<T> implements Queue<T> {
 	private java.util.Queue<T>[] queue = null;
 	private final int subqueue_capacity = 1000;
 	
-	public ConcurrentSuperQueue(int N) {
+	public ConcurrentSuperQueue(Integer N) {
 		
 		queue = (java.util.Queue<T> []) new java.util.concurrent.ConcurrentLinkedQueue[N];
 		
@@ -20,6 +20,7 @@ public class ConcurrentSuperQueue<T> implements Queue<T> {
 	@Override
 	public void enqueue(T t) {
 		int n = ThreadLocalRandom.current().nextInt() % queue.length;
+		if(n<0)	n=-n;
 		
 		queue[n].add(t);
 	}
@@ -27,6 +28,7 @@ public class ConcurrentSuperQueue<T> implements Queue<T> {
 	@Override
 	public T dequeue() {
 		int n = ThreadLocalRandom.current().nextInt() % queue.length;
+		if(n<0)	n=-n;
 		
 		return queue[n].poll();
 	}
