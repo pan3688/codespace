@@ -13,7 +13,7 @@ public class SimpleQueue<T> implements Queue<T>{
 	}
 	
 	@Override
-	public void enqueue(T t) throws Exception {
+	public synchronized void enqueue(T t) throws Exception {
 		if(tail-head == items.length)
 			throw new Exception();
 		
@@ -23,7 +23,7 @@ public class SimpleQueue<T> implements Queue<T>{
 	}
 
 	@Override
-	public T dequeue() throws Exception {
+	public synchronized T dequeue() throws Exception {
 		if(tail==head)
 			throw new Exception();
 		

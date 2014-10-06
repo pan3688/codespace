@@ -6,11 +6,12 @@ public class TestMd {
 
 	public static void main(String[] args) throws InterruptedException {
 		
-		int i = -47;
+		int i = (-47 & 1);
 		
-		System.out.println(i%2);
+		System.out.println(i);
+//		System.out.println(i%2);
 		
-		long start = System.currentTimeMillis();
+		/*long start = System.currentTimeMillis();
 		
 		System.out.println("Start\t" + start);
 		long current = 0L;
@@ -23,7 +24,7 @@ public class TestMd {
 			System.out.println(current);
 		}while((current-start)/1000 < 1);
 		
-		System.out.println("Done!");
+		System.out.println("Done!");*/
 	}
 	
 }
