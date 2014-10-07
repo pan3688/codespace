@@ -35,13 +35,14 @@ public class Test {
 		
 		ThreadLocalRandom mainRandom = ThreadLocalRandom.current();
 		
-		for(int i = 0;i<100000; i++){
-			try {
-				q.enqueue(mainRandom.nextInt());
-			} catch (Exception e) {
+		for(int j=0;j<N;j++){
+			for(int i = 0;i<100000; i++){
+				try {
+					q.preFill(j,mainRandom.nextInt());
+				} catch (Exception e) {
+				}
 			}
 		}
-		
 		myThreads = new Thread[threadCount];
 		
 		for(int j = 0;j<threadCount;j++)
@@ -59,33 +60,22 @@ public class Test {
 				e.printStackTrace();
 			}
 		}
-		System.out.println("ThreadCount\t" + threadCount + "\tTotal Operations\t" + totalOps +"\tThroughput\t" + totalOps/(5*threadCount));
-		/*
-		 * to test the Queues
-		 */
-		/*for(int i = 0;i<200;i++){
-			Object tail = null;
-			try {
-				tail = q.dequeue();
-				
-				if(tail != null)
-					System.out.println(tail);
-			} catch (Exception e) {
-				System.out.println("Subqueue seems EMP");
-			}
-		}*/
+		System.out.println(threadCount + "," + totalOps/(5000));
+		
 	}
 	
 	public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		
 		String subqueue_array[] = { seqSuper, conSuper };
 		int N_array[] = { 2,8};
-		int threadCountArray[] = { 2,4,8,16,32,48,64};
+	//	int threadCountArray[] = { 1,2,4,6,8,12,16,20,24,32,40,48,64};
+		int threadCountArray[] = {1,6,12,20,24,40};
 		
 		for(String sub : subqueue_array){
 			for(int i : N_array){
-				System.out.println(sub + "\tN = " + i);
+				System.out.println(sub + ",N = " + i);
 				for(int j : threadCountArray){
+					System.out.println("ThreadCount"  + ",Throughput");
 					String args_test[] = {sub,j+"",i+""};
 					for(int k=0;k<5;k++){
 						test(args_test);

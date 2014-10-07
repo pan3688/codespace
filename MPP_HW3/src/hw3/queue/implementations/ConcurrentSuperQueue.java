@@ -36,4 +36,9 @@ public class ConcurrentSuperQueue<T> implements Queue<T> {
 		return queue[n].poll();
 	}
 
+	@Override
+	public void preFill(int j, T nextInt) throws Exception {
+		queue[j].add(nextInt);
+	}
+
 }

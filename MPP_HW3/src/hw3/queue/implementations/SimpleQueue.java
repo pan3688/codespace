@@ -48,4 +48,9 @@ public class SimpleQueue<T> implements Queue<T>{
 			System.out.println(test.dequeue());
 		
 	}
+
+	@Override
+	public void preFill(int j, T nextInt) {
+		
+	}
 }

@@ -11,10 +11,14 @@ public class SequentialSuperQueue<T> implements Queue<T> {
 	public SequentialSuperQueue(Integer N) {
 		subqueus = new SimpleQueue[N];
 		
-		for(int i=0;i<N;i++)
+		for(int i=0;i<N;i++){
 			subqueus[i]= new SimpleQueue<T>(subqueue_capacity);
-		
+		}
 		mask = (int)N - 1;
+	}
+	
+	public void preFill(int queIndex,T item) throws Exception{
+		subqueus[queIndex].enqueue(item);
 	}
 	
 	@Override
