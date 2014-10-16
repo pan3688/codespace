@@ -28,7 +28,7 @@ public class SequentialSuperQueue<T> implements Queue<T> {
 		try {
 			subqueus[n].enqueue(t);
 		} catch (Exception e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 	}
 
@@ -41,7 +41,7 @@ public class SequentialSuperQueue<T> implements Queue<T> {
 		try {
 			t = (T) subqueus[n].dequeue();
 		} catch (Exception e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 			
 		return t;

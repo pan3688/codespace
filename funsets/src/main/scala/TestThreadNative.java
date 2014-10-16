@@ -1,16 +1,17 @@
-package hw3;
 
-import java.util.concurrent.ThreadLocalRandom;
 
 import hw3.queue.implementations.Queue;
+import hw3.queue.implementations.SimpleQueue;
 
-public class TestThread extends Thread {
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.ThreadLocalRandom;
 
+public class TestThreadNative extends Thread{
 	private Queue<Integer> q;
 	private long ops;
 	private ThreadLocalRandom myRGN = ThreadLocalRandom.current();
 	
-	public TestThread(Queue<Integer> q) {
+	public TestThreadNative(Queue<Integer> q) {
 		this.q = q;
 		ops = 0;
 	}
@@ -55,10 +56,17 @@ public class TestThread extends Thread {
 	
 	private void doOperation(int item) throws Exception{
 		
-		if((item & 1) == 0)
-			q.enqueue(item);
-		else
-			q.dequeue();
-			
+		if((item & 1) == 0){
+			/*q.enqueue(item);*/
+			if(q instanceof SimpleQueue<?>)
+				q.enqueue(item);
+			else if(q instanceof ConcurrentLinkedQueue)
+				((ConcurrentLinkedQueue<Integer>)q).add(item);
+		}else{
+			if(q instanceof SimpleQueue<?>)
+				q.dequeue();
+			else if(q instanceof ConcurrentLinkedQueue)
+				((ConcurrentLinkedQueue<Integer>)q).remove();
+		}
 	}
 }

@@ -51,6 +51,10 @@ public class SimpleQueue<T> implements Queue<T>{
 
 	@Override
 	public void preFill(int j, T nextInt) {
-		
+		try {
+			this.enqueue(nextInt);
+		} catch (Exception e) {
+		//	e.printStackTrace();
+		}
 	}
 }

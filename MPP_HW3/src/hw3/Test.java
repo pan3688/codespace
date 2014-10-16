@@ -4,36 +4,34 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.ThreadLocalRandom;
 
+import hw3.queue.implementations.ConcurrentLinkedQueueWrapper;
 import hw3.queue.implementations.Queue;
+import hw3.queue.implementations.SimpleQueue;
 
 public class Test {
 
-	private static int threadCount = 64;
+	private static int threadCount = 2;
 	private static int N = 2;
 	private static volatile long totalOps = 0L;
 	
-	private static final String seqSuper = "SequentialSuperQueue";
-	private static final String conSuper = "ConcurrentSuperQueue";
-	private static Thread[] myThreads = null;
+	private static final String seqSuper = "hw3.queue.implementations.SequentialSuperQueue";
+	private static final String conSuper = "hw3.queue.implementations.ConcurrentSuperQueue";
+	private static final String simpleBaseQueue = "hw3.queue.implementations.SimpleQueue";
+	private static final String singleConcurrentQueue = "hw3.queue.implementations.ConcurrentLinkedQueueWrapper";
 	
-	public static void test(String[] args) throws ClassNotFoundException, NoSuchMethodException, SecurityException,
-				InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-		
-		totalOps = 0L;
+	private static Thread[] myThreads = null;
+	private static ThreadLocalRandom mainRandom = ThreadLocalRandom.current();
+	
+	public static void test(String[] args) throws Exception {
 		
 		String queue = (args.length!=0) ? args[0] : seqSuper;
 		threadCount = (args.length != 0) ? Integer.parseInt(args[1]) : 2;
 		N = (args.length != 0) ? Integer.parseInt(args[2]) : 2;
 	
-		Class<Queue> myClass = (Class<Queue>) Class.forName("hw3.queue.implementations." + queue);
-		
-		/*for(Constructor<?> con : myClass.getConstructors())
-			System.out.println(con);*/
+		Class<Queue> myClass = (Class<Queue>) Class.forName(queue);
 		
 		Constructor<Queue> myConstructor = myClass.getConstructor(Integer.class);
 		Queue<Integer> q = (Queue<Integer>)myConstructor.newInstance(N);
-		
-		ThreadLocalRandom mainRandom = ThreadLocalRandom.current();
 		
 		for(int j=0;j<N;j++){
 			for(int i = 0;i<100000; i++){
@@ -43,6 +41,12 @@ public class Test {
 				}
 			}
 		}
+		threadOps(q,threadCount);
+	}
+
+	private static void threadOps(Queue<Integer> q,int threadCount) {
+		totalOps = 0L;
+		
 		myThreads = new Thread[threadCount];
 		
 		for(int j = 0;j<threadCount;j++)
@@ -54,31 +58,49 @@ public class Test {
 		for(int l = 0;l<threadCount;l++){
 			try {
 					myThreads[l].join();
-			//		System.out.println("Thread\t" + myThreads[l].getId() +"\tOperation#\t" + ((TestThread)myThreads[l]).getOps());
 					totalOps = totalOps +  ((TestThread)myThreads[l]).getOps();
 			} catch (InterruptedException e) {
-				e.printStackTrace();
+			//	e.printStackTrace();
 			}
 		}
-		System.out.println(threadCount + "," + totalOps/(5000));
-		
+		System.out.println(totalOps/(5000));
 	}
 	
-	public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+	public static void main(String[] args) throws Exception {
 		
-		String subqueue_array[] = { seqSuper, conSuper };
-		int N_array[] = { 2,8};
-	//	int threadCountArray[] = { 1,2,4,6,8,12,16,20,24,32,40,48,64};
-		int threadCountArray[] = {1,6,12,20,24,40};
+		String queue_array[] = { simpleBaseQueue,singleConcurrentQueue };
+		int N_array[] = {2,8,32,64,256};
+		int threadCountArray[] = { 1,2,4,6,8,12,16,20,24,32,40,48,64};
 		
-		for(String sub : subqueue_array){
-			for(int i : N_array){
-				System.out.println(sub + ",N = " + i);
-				for(int j : threadCountArray){
-					System.out.println("ThreadCount"  + ",Throughput");
-					String args_test[] = {sub,j+"",i+""};
+		for(String sub : queue_array){
+			for(int j : threadCountArray){
+				System.out.println(sub + ",threadCount = " + j);
+				
+				if(sub.equals(simpleBaseQueue)){
 					for(int k=0;k<5;k++){
-						test(args_test);
+						hw3.queue.implementations.Queue<Integer> q = new SimpleQueue<>(10000000);
+						
+						for(int i = 0;i<1000000;i++){
+							q.preFill(0, mainRandom.nextInt());
+						}
+						threadOps(q, j);
+					}
+				}else if(sub.equals(singleConcurrentQueue)){
+					for(int k=0;k<5;k++){
+						hw3.queue.implementations.Queue<Integer> q = new ConcurrentLinkedQueueWrapper<>();
+						
+						for(int i = 0;i<1000000;i++){
+							q.preFill(0, mainRandom.nextInt());
+						}
+						threadOps(q, j);
+					}
+				}else{
+					for(int i : N_array){
+						System.out.println("N\t" + i + "\tThroughput");
+						String args_test[] = {sub,j+"",i+""};
+						for(int k=0;k<5;k++){
+							test(args_test);
+						}
 					}
 				}
 			}
