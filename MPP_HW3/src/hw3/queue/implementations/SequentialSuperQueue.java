@@ -5,7 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class SequentialSuperQueue<T> implements Queue<T> {
 
 	private Queue<T>[] subqueus = null;
-	private final int subqueue_capacity = 1000000;
+	private final int subqueue_capacity = 100000;
 	private int mask = 0;
 	
 	public SequentialSuperQueue(Integer N) {

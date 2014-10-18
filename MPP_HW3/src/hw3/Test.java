@@ -34,7 +34,7 @@ public class Test {
 		Queue<Integer> q = (Queue<Integer>)myConstructor.newInstance(N);
 		
 		for(int j=0;j<N;j++){
-			for(int i = 0;i<100000; i++){
+			for(int i = 0;i<10000; i++){
 				try {
 					q.preFill(j,mainRandom.nextInt());
 				} catch (Exception e) {
@@ -68,28 +68,28 @@ public class Test {
 	
 	public static void main(String[] args) throws Exception {
 		
-		String queue_array[] = { simpleBaseQueue,singleConcurrentQueue };
-		int N_array[] = {2,8,32,64,256};
-		int threadCountArray[] = { 1,2,4,6,8,12,16,20,24,32,40,48,64};
+		String queue_array[] = { conSuper };
+		int N_array[] = {32,64,256};
+		int threadCountArray[] = { 1,2,4,6,8,12,16};
 		
 		for(String sub : queue_array){
 			for(int j : threadCountArray){
 				System.out.println(sub + ",threadCount = " + j);
 				
 				if(sub.equals(simpleBaseQueue)){
-					for(int k=0;k<5;k++){
-						hw3.queue.implementations.Queue<Integer> q = new SimpleQueue<>(10000000);
+					for(int k=0;k<3;k++){
+						hw3.queue.implementations.Queue<Integer> q = new SimpleQueue<>(100000);
 						
-						for(int i = 0;i<1000000;i++){
+						for(int i = 0;i<10000;i++){
 							q.preFill(0, mainRandom.nextInt());
 						}
 						threadOps(q, j);
 					}
 				}else if(sub.equals(singleConcurrentQueue)){
-					for(int k=0;k<5;k++){
+					for(int k=0;k<3;k++){
 						hw3.queue.implementations.Queue<Integer> q = new ConcurrentLinkedQueueWrapper<>();
 						
-						for(int i = 0;i<1000000;i++){
+						for(int i = 0;i<10000;i++){
 							q.preFill(0, mainRandom.nextInt());
 						}
 						threadOps(q, j);
@@ -98,7 +98,7 @@ public class Test {
 					for(int i : N_array){
 						System.out.println("N\t" + i + "\tThroughput");
 						String args_test[] = {sub,j+"",i+""};
-						for(int k=0;k<5;k++){
+						for(int k=0;k<3;k++){
 							test(args_test);
 						}
 					}
