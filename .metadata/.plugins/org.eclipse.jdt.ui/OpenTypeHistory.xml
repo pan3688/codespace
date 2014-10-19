@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
 <typeInfo handle="=MPP_HW3/\/usr\/lib\/jvm\/jdk1.7.0_60\/jre\/lib\/rt.jar&lt;javax.lang.model.element(QualifiedNameable.class[QualifiedNameable" modifiers="1537" timestamp="1399495757000"/>
+<typeInfo handle="=MPP_HW3/\/usr\/lib\/jvm\/jdk1.7.0_60\/jre\/lib\/rt.jar&lt;java.util.concurrent(ConcurrentLinkedQueue.class[ConcurrentLinkedQueue" modifiers="33" timestamp="1399495757000"/>
+<typeInfo handle="=MPP_HW3/src&lt;hw3.queue.implementations{Queue.java[Queue" modifiers="513" timestamp="1412639899000"/>
+<typeInfo handle="=MPP_HW3/\/usr\/lib\/jvm\/jdk1.7.0_60\/jre\/lib\/rt.jar&lt;java.lang(Thread.class[Thread" modifiers="33" timestamp="1399495757000"/>
+<typeInfo handle="=MPP_HW_4/src&lt;hw4.locks{Lock.java[Lock" modifiers="513" timestamp="1413645471000"/>
 </typeInfoHistroy>
