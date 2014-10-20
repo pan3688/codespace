@@ -8,11 +8,12 @@ import hw4.locks.Lock;
 
 public class PriorityCLH implements Lock{
 
-	private final int initialCapacity = 96;
+	private final int initialCapacity = 256;
 	
-	private PriorityBlockingQueue<PNode> lockQueue;
-	private AtomicReference<PNode> tail;
-	ThreadLocal<PNode> myNode;
+	private volatile PriorityBlockingQueue<PNode> lockQueue;
+	private volatile AtomicReference<PNode> tail;
+	volatile ThreadLocal<PNode> myNode;
+	volatile ThreadLocal<PNode> myPred;
 	
 	public PriorityCLH() {
 		
@@ -20,9 +21,9 @@ public class PriorityCLH implements Lock{
 		
 		lockQueue = new PriorityBlockingQueue<PNode>(initialCapacity,new Comparator<PNode>() {
 			public int compare(PNode pn1, PNode pn2) {
-				if(pn1.getPriority() < pn2.getPriority())
+				if(pn1.priority < pn2.priority)
 					return -1;
-				else if(pn1.getPriority() > pn2.getPriority())
+				else if(pn1.priority > pn2.priority)
 					return 1;
 				
 				return 0;
@@ -34,30 +35,34 @@ public class PriorityCLH implements Lock{
 						((TestThread)Thread.currentThread()).getThreadPriority());
 			}
 		};
+		myPred = new ThreadLocal<PNode>(){
+			protected PNode initialValue() {
+				return null;
+			}
+		};
 	}
-	
-	
-	@Override
+
 	public void lock() {
 		PNode pnode = myNode.get();
-		pnode.setLocked(true);
-		
+
 		PNode pred = tail.getAndSet(pnode);
 		
-		if(pred != null){
+		if(pred!=null){
+			pnode.locked = true;
 			lockQueue.add(pnode);
-			while(pnode.isLocked());
+			while(pnode.locked){
+				
+			}
 		}
 	}
 
-	@Override
 	public void unlock() {
 		PNode me = myNode.get();
-		me.setLocked(false);
-		
-		while(lockQueue.peek() == null);
 		
 		PNode head = lockQueue.poll();
-		head.setLocked(false);
+		if(head!=null){
+			head.locked = false;
+		}else
+			tail.set(null);
 	}
 }

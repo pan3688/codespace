@@ -2,9 +2,9 @@ package hw4.prioritylocks;
 
 public class PNode{
 
-	private boolean locked;
-	private int priority;
-	private int id;
+	volatile boolean locked;
+	int priority;
+	int id;
 	
 	public PNode(int id,int priority) {
 		this.locked = false;
@@ -12,7 +12,7 @@ public class PNode{
 		this.id = id;
 	}
 	
-	public boolean isLocked() {
+	/*public boolean isLocked() {
 		return this.locked;
 	}
 	
@@ -30,7 +30,7 @@ public class PNode{
 	
 	public int getNodeId() {
 		return this.id;
-	}
+	}*/
 	/*public static void main(String[] args) {
 		PNode pnode1 = new PNode(1,5);
 		PNode pnode2 = new PNode(2,5);
@@ -60,6 +60,7 @@ public class PNode{
 		}
 		//System.out.println("\nROUND 2\n");
 		pbq.add(new PNode(6,2));
+		pbq.add(new PNode(8,1));
 		pbq.add(new PNode(7,4));
 		
 		PNode temp;

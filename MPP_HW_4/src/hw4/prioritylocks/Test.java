@@ -14,7 +14,7 @@ public class Test {
 		final Counter counter = new SharedCounter(0, lock);
 		
 		for(int i = 0;i < threadCount;i++){
-			new TestThread(counter,random.nextInt(5)+1).start();
+			new TestThread(counter,random.nextInt(5) + 1).start();
 		}
 	}
 
