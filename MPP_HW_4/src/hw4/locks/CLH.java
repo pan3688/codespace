@@ -9,7 +9,7 @@ public class CLH implements Lock {
 	ThreadLocal<QNode> myNode;
 	
 	public CLH(){
-		tail = new AtomicReference<>(null);
+		tail = new AtomicReference<>(new QNode());
 		myNode = new ThreadLocal<QNode>(){
 			protected QNode initialValue() {
 				return new QNode();

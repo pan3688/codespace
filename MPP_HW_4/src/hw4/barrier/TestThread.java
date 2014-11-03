@@ -5,7 +5,7 @@ import hw4.locks.TTASLock;
 
 public class TestThread extends Thread {
 
-	private static final int thread_count=8;
+	private static final int thread_count=64;
 	
 	private static int ID_GEN = 0;
 	private static volatile int counter=0;
@@ -16,6 +16,8 @@ public class TestThread extends Thread {
 	private Lock lock;
 	private FooBar fb;
 	private Barrier barrier;
+	private long start;
+	private long duration;
 
 	public TestThread(Lock lock,FooBar fb,Barrier barrier) {
 		id = ID_GEN++;
@@ -29,6 +31,8 @@ public class TestThread extends Thread {
 		
 		// Thread # calling FOO method
 		fb.foo();
+		
+		start = System.currentTimeMillis();
 		
 		// Barrier Begins
 		if(barrier.equals(Barrier.LockBased)){
@@ -60,6 +64,8 @@ public class TestThread extends Thread {
 		//Barrier Ends
 		
 		// Thread # calling bar method
+		duration = System.currentTimeMillis() - start;
+		
 		fb.bar();
 	}
 	
@@ -67,11 +73,30 @@ public class TestThread extends Thread {
 		return id;
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Lock lock = new TTASLock();
 		FooBar fb = new FooBar();
+		TestThread[] myThreads = new TestThread[thread_count];
+		
+		/*for(int i=0;i<thread_count;i++)
+			new TestThread(lock, fb,Barrier.LockBased).start();*/
 		
 		for(int i=0;i<thread_count;i++)
-			new TestThread(lock, fb,Barrier.LockBased).start();
+			myThreads[i] = new TestThread(lock, fb,Barrier.ArrayBased);
+		
+		for(int j=0;j<thread_count;j++)
+			myThreads[j].start();
+		
+		for(int k=0;k<thread_count;k++)
+			myThreads[k].join();
+		
+		long barrier_time = 0L;
+		
+		for(int l=0;l<thread_count;l++)
+			barrier_time += myThreads[l].duration;
+		
+		System.out.println("ThreadCount\tBarrierTime");
+		System.out.println(thread_count + "\t" + barrier_time);
+		
 	}
 }

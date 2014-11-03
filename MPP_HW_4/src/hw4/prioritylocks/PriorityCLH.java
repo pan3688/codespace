@@ -2,6 +2,7 @@ package hw4.prioritylocks;
 
 import java.util.Comparator;
 import java.util.concurrent.PriorityBlockingQueue;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 
 import hw4.locks.Lock;
@@ -50,7 +51,7 @@ public class PriorityCLH implements Lock{
 		if(pred!=null){
 			pnode.locked = true;
 			lockQueue.add(pnode);
-			while(pnode.locked){
+			while(pnode.locked & tail.get()!=null){
 				
 			}
 		}
@@ -58,11 +59,21 @@ public class PriorityCLH implements Lock{
 
 	public void unlock() {
 		PNode me = myNode.get();
+		me.locked = false;
 		
 		PNode head = lockQueue.poll();
 		if(head!=null){
 			head.locked = false;
 		}else
 			tail.set(null);
+	}
+	
+	public boolean tryLock(long time,TimeUnit unit){
+		
+		long patience = TimeUnit.MILLISECONDS.convert(time, unit);
+		long startTime = System.currentTimeMillis();
+		
+		
+		return false;
 	}
 }

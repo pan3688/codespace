@@ -34,7 +34,7 @@ public class Test {
 		Queue<Integer> q = (Queue<Integer>)myConstructor.newInstance(N);
 		
 		for(int j=0;j<N;j++){
-			for(int i = 0;i<10000; i++){
+			for(int i = 0;i<5000; i++){
 				try {
 					q.preFill(j,mainRandom.nextInt());
 				} catch (Exception e) {
@@ -68,9 +68,9 @@ public class Test {
 	
 	public static void main(String[] args) throws Exception {
 		
-		String queue_array[] = { conSuper };
+		String queue_array[] = { simpleBaseQueue,singleConcurrentQueue,seqSuper, conSuper };
 		int N_array[] = {32,64,256};
-		int threadCountArray[] = { 1,2,4,6,8,12,16};
+		int threadCountArray[] = {56,64};
 		
 		for(String sub : queue_array){
 			for(int j : threadCountArray){

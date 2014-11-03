@@ -3,7 +3,7 @@ package hw4.prioritylocks;
 public class PNode{
 
 	volatile boolean locked;
-	int priority;
+	volatile int priority;
 	int id;
 	
 	public PNode(int id,int priority) {

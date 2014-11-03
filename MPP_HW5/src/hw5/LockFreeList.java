@@ -16,31 +16,30 @@ public class LockFreeList<T> implements Set<T> {
 	public Window find(Node<T> head,int key){
 		Node<T> pred = null, curr = null, succ = null;
 		boolean[] marked = {false};
-		boolean snip;
+		boolean snip = false;
 		
 		retry: while(true){
 			pred = head;
 			
-			if(pred.next.get(marked) == null)
-				return new Window(pred,null);
-			
 			curr = (Node<T>) pred.next.getReference();
 			
 			while(true){
+
+				if(curr!=null)
+					succ = (Node<T>) curr.next.get(marked);
 				
-				if(curr == null)
-					return new Window(pred,null);
-				
-				succ = (Node<T>) curr.next.get(marked);
-				
-				while(succ!=null && marked[0]){
+				while(marked[0]){
+					
 					snip = pred.next.compareAndSet(curr, succ, false, false);
+					
 					if(!snip)
 						continue retry;
 					curr = succ;
-					succ = (Node<T>) curr.next.get(marked);
+					
+					if(curr != null)
+						succ = (Node<T>) curr.next.get(marked);
 				}
-				if(curr.key >= key)
+				if(curr ==null || curr.key >= key)
 					return new Window(pred,curr);
 				
 				pred = curr;
@@ -98,11 +97,16 @@ public class LockFreeList<T> implements Set<T> {
 		if(contains_cleanup)
 			find(head,key);
 		
-		while(curr.next.get(marked) != null && curr.key < key){
-			curr = curr.next.getReference();
-			Node<T> succ = curr.next.get(marked);
+		while(curr !=null &&  curr.key < key){
+//			curr = curr.next.getReference();
+
+			curr = curr.next.get(marked);
 		}
-		return (curr.key == key && !marked[0]);
+		
+		if(curr !=null)
+			return (curr.key == key && !marked[0]);
+		else
+			return false;
 	}
 	
 }

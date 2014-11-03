@@ -30,7 +30,6 @@ public class MCS implements Lock {
 
 	@Override
 	public void unlock() {
-		// TODO Auto-generated method stub
 		QNode qnode = myNode.get();
 		
 		if(qnode.next == null){

@@ -8,11 +8,15 @@ public class TestThread extends Thread {
 	private int id;
 	private int priority;
 	private Counter counter;
+	private long start;
+	private double waiting;
 	
 	public TestThread(Counter counter) {
 		this.id = ID_GEN++;
 		this.priority = 5; // by default -- least priority
 		this.counter = counter;
+		start = 0L;
+		waiting = 0;
 	}
 	
 	public TestThread(Counter counter,int priority) {
@@ -24,10 +28,13 @@ public class TestThread extends Thread {
 	@Override
 	public void run() {
 		
+		start = System.currentTimeMillis();
 		for(int i = 0;i<threadIterations;i++)
 			counter.getAndIncrement();
 		
-		System.out.println("Thread " + id + " DONE.. <Counter:" + counter + ">");
+		waiting = (double)(System.currentTimeMillis() - start)/threadIterations;
+		
+	//	System.out.println("Thread " + id + " DONE.. <Counter:" + counter + ">");
 	}
 	
 	public int getThreadId() {
@@ -36,5 +43,7 @@ public class TestThread extends Thread {
 	public int getThreadPriority(){
 		return this.priority;
 	}
-	
+	public double getWaiting() {
+		return this.waiting;
+	}
 }

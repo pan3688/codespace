@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class TTASLock implements Lock{
 
-	AtomicBoolean state = new AtomicBoolean(false);
+	volatile AtomicBoolean state = new AtomicBoolean(false);
 	
 	public void lock(){
 		
